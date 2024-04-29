@@ -1,0 +1,52 @@
+{
+  "env": {
+    "node": true
+  },
+  "overrides": [
+    {
+      "files": ["*.spec.ts"],
+      "env": {
+        "jest": true
+      }
+    }
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
+  ],  
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "parserOptions": { "project": ["./tsconfig.json"] }
+  },
+  "plugins": ["prettier", "@typescript-eslint"],
+  "rules": {
+    "camelcase": [1],
+    "linebreak-style": ["error", "unix"],
+    "no-duplicate-imports": "error",
+    "no-multiple-empty-lines": [
+      2,
+      {
+        "max": 1,
+        "maxEOF": 0,
+        "maxBOF": 0
+      }
+    ],
+    "no-return-assign": [1],
+    "quotes": ["error", "single"],
+    "semi": ["error", "always"],
+    "prettier/prettier": "error",
+    "@typescript-eslint/ban-types": [
+      "error",
+      {
+        "extendDefaults": true,
+        "types": {
+          "{}": false
+        }
+      }
+    ]
+  },
+  "ignorePatterns": ["build/*"]
+}
